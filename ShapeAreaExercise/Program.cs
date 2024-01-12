@@ -20,5 +20,11 @@ class Program
         return area;
     }
 
+    //Method to calculate area of a rectangle
+    public static double Rectangle(double length, double width)
+    {
+        double area = length * width;
+        return area;
+    }
 }
 
