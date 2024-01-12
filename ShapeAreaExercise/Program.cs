@@ -26,5 +26,12 @@ class Program
         double area = length * width;
         return area;
     }
+
+    //Method to calculate area of a square
+    public static double Square(double side)
+    {
+        double area = Math.Pow(side, 2);
+        return area;
+    }
 }
 
