@@ -1,57 +1,163 @@
-﻿namespace ShapeAreaExercise;
+﻿using static System.Collections.Specialized.BitVector32;
+
+namespace ShapeAreaExercise;
 class Program
 {
     static void Main(string[] args)
     {
-        //Get user input for your circle method. Then call your circle method.
-        Console.WriteLine("CALCULATE THE AREA OF A CIRCLE");
-        Console.Write("Enter radius: ");
-        int? userRadius = Convert.ToInt32(Console.ReadLine());
-        double radius = Convert.ToInt64(userRadius);
+        //Prompt the user to choose a shape
+        Console.WriteLine("CALCLUATE AREA OF A SHAPE");
+        Console.WriteLine("Choose your shape below.");
+        char selection = UserSelection();
+        string shapeName = ShapeConfirmation(selection);
 
-        double circleArea = Circle(radius);
-        Console.WriteLine($"Area: {circleArea}");
+        //Confirm user input
+        char confirmation;
+        
+        switch (selection)
+        {
+            case 'C' or 'T' or 'R' or 'S' or 'c' or 't' or 'r' or 's':
+                Console.WriteLine();
+                Console.Write($"You have chosen a {shapeName}. Is that correct? (y/n): ");
+                confirmation = Convert.ToChar(Console.ReadLine());
+                break;
 
+            default:
+                Console.WriteLine();
+                Console.WriteLine("I'm sorry, I did not understand that input.");
+                return;
+        }
+
+        //Execute code if correct
+        switch (confirmation)
+        {
+            case 'Y' or 'y':
+                double userArea = GetUserArea(selection);
+                Console.WriteLine();
+                Console.WriteLine($"The area of your {shapeName} is: \n" +
+                    $"{userArea}");
+                return;
+
+            case 'N' or 'n':
+                Console.WriteLine();
+                Console.WriteLine("I'm sorry, I must have made a mistake.");
+                return;
+
+            default:
+                Console.WriteLine();
+                Console.WriteLine("I'm sorry, I did not understand that input.");
+                return;
+        }
+    }
+
+    //Method to collect user input
+    public static char UserSelection()
+    {
         Console.WriteLine();
-
-        //Get user input for your triangle method. Then call your triangle method.
-        Console.WriteLine("CALCULATE THE AREA OF A TRIANGLE");
-        Console.Write("Length of longest side (base): ");
-        int? userBase = Convert.ToInt32(Console.ReadLine());
-        double baseLength = Convert.ToInt64(userBase);
-
-        Console.Write("Height from base to opposite corner, at a 90° angle: ");
-        int? userTriHeight = Convert.ToInt32(Console.ReadLine());
-        double triangleHeight = Convert.ToInt64(userTriHeight);
-
-        double triangleArea = Triangle(baseLength, triangleHeight);
-        Console.WriteLine($"Area: {triangleArea}");
-
+        Console.WriteLine("For a circle, type 'C';");
+        Console.WriteLine("For a triangle, type 'T';");
+        Console.WriteLine("For a rectangle, type 'R';");
+        Console.WriteLine("For a square, type 'S'.");
         Console.WriteLine();
+        Console.Write("Type only the letter, without quotes: ");
 
-        //Get user input for your rectangle method. Then call your rectangle method.
-        Console.WriteLine("CALCULATE THE AREA OF A RECTANGLE");
-        Console.Write("Length of one side: ");
-        int? userLength = Convert.ToInt32(Console.ReadLine());
-        double rectangleLength = Convert.ToInt64(userLength);
+        char selection = Convert.ToChar(Console.ReadLine());
+        return selection;
+    }
 
-        Console.Write("Height of other side: ");
-        int? userRectHeight = Convert.ToInt32(Console.ReadLine());
-        double rectangleHeight = Convert.ToInt64(userRectHeight);
+    //Method to confirm user input
+    public static string ShapeConfirmation(char userSelection)
+    {
+        string shapeName;
 
-        double rectangleArea = Rectangle(rectangleLength, rectangleHeight);
-        Console.WriteLine($"Area: {rectangleArea}");
+        switch (userSelection)
+        {
+            case 'C' or 'c':
+                shapeName = "circle";
+                break;
 
-        Console.WriteLine();
+            case 'T' or 't':
+                shapeName = "triangle";
+                break;
 
-        //Get user input for your square method. Then call your square method.
-        Console.WriteLine("CALCULATE THE AREA OF A SQUARE");
-        Console.Write("Length of sides: ");
-        int? userSide = Convert.ToInt32(Console.ReadLine());
-        double side = Convert.ToInt64(userSide);
+            case 'R' or 'r':
+                shapeName = "rectangle";
+                break;
 
-        double squareArea = Square(side);
-        Console.WriteLine($"Area: {squareArea}");
+            case 'S' or 's':
+                shapeName = "square";
+                break;
+
+            default:
+                shapeName = "NULL";
+                break;
+        }
+
+        return shapeName;
+    }
+
+
+    //Method to execute user input
+    public static double GetUserArea(char userSelection)
+    {
+        double userArea;
+
+        switch (userSelection)
+        {
+            case 'C' or 'c':
+                //Get user input for your circle method. Then call your circle method.
+                Console.WriteLine();
+                Console.Write("Length of radius: ");
+                int? userRadius = Convert.ToInt32(Console.ReadLine());
+                double radius = Convert.ToInt64(userRadius);
+
+                userArea = Circle(radius);
+                break;
+
+            case 'T' or 't':
+                //Get user input for your triangle method. Then call your triangle method.
+                Console.WriteLine();
+                Console.Write("Length of longest side (base): ");
+                int? userBase = Convert.ToInt32(Console.ReadLine());
+                double baseLength = Convert.ToInt64(userBase);
+
+                Console.Write("Length from base to opposite corner, measured at a 90° angle: ");
+                int? userTriHeight = Convert.ToInt32(Console.ReadLine());
+                double triangleHeight = Convert.ToInt64(userTriHeight);
+
+                userArea = Triangle(baseLength, triangleHeight);
+                break;
+
+            case 'R' or 'r':
+                //Get user input for your rectangle method. Then call your rectangle method.
+                Console.WriteLine();
+                Console.Write("Length of one side: ");
+                int? userLength = Convert.ToInt32(Console.ReadLine());
+                double rectangleLength = Convert.ToInt64(userLength);
+
+                Console.Write("Length of other side: ");
+                int? userRectHeight = Convert.ToInt32(Console.ReadLine());
+                double rectangleHeight = Convert.ToInt64(userRectHeight);
+
+                userArea = Rectangle(rectangleLength, rectangleHeight);
+                break;
+
+            case 'S' or 's':
+                //Get user input for your square method. Then call your square method.
+                Console.WriteLine();
+                Console.Write("Length of sides: ");
+                int? userSide = Convert.ToInt32(Console.ReadLine());
+                double side = Convert.ToInt64(userSide);
+
+                userArea = Square(side);
+                break;
+
+            default:
+                userArea = 0;
+                break;
+        }
+
+        return userArea;
     }
 
     // Method to calculate area of a circle
