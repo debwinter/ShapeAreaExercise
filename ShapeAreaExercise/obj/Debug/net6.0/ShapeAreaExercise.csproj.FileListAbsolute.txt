@@ -1,0 +1,15 @@
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/bin/Debug/net6.0/ShapeAreaExercise
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/bin/Debug/net6.0/ShapeAreaExercise.deps.json
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/bin/Debug/net6.0/ShapeAreaExercise.runtimeconfig.json
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/bin/Debug/net6.0/ShapeAreaExercise.dll
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/bin/Debug/net6.0/ShapeAreaExercise.pdb
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/obj/Debug/net6.0/ShapeAreaExercise.csproj.AssemblyReference.cache
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/obj/Debug/net6.0/ShapeAreaExercise.GeneratedMSBuildEditorConfig.editorconfig
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/obj/Debug/net6.0/ShapeAreaExercise.AssemblyInfoInputs.cache
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/obj/Debug/net6.0/ShapeAreaExercise.AssemblyInfo.cs
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/obj/Debug/net6.0/ShapeAreaExercise.csproj.CoreCompileInputs.cache
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/obj/Debug/net6.0/ShapeAreaExercise.dll
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/obj/Debug/net6.0/refint/ShapeAreaExercise.dll
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/obj/Debug/net6.0/ShapeAreaExercise.pdb
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/obj/Debug/net6.0/ShapeAreaExercise.genruntimeconfig.cache
+/Users/debrawinter/Desktop/Repos/ShapeAreaExercise/ShapeAreaExercise/obj/Debug/net6.0/ref/ShapeAreaExercise.dll
