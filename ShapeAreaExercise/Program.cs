@@ -12,5 +12,13 @@ class Program
         double area = radius * 2 * Math.PI;
         return area;
     }
+
+    //Method to calculate area of a triangle
+    public static double Triangle(double baseLength, double height)
+    {
+        double area = baseLength * height / 2;
+        return area;
+    }
+
 }
 
