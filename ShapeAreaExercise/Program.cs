@@ -163,7 +163,7 @@ class Program
     // Method to calculate area of a circle
     public static double Circle(double radius)
     {
-        double area = radius * 2 * Math.PI;
+        double area = Math.PI * Math.Pow(radius, 2);
         return area;
     }
 
